@@ -1,8 +1,29 @@
+import { Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Image, ImageTN } from "./Data";
+import "swiper/css";
+import "swiper/css/navigation";
+
 export default function Main() {
   return (
     <main>
       <div className="gallery">
-        <div className="big"></div>
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={50}
+          slidesPerView={1}
+          navigation
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log("slide change")}
+        >
+          {Image.map((image, index) => {
+            return (
+              <SwiperSlide key={index} style={{ height: "18rem" }}>
+                <img src={image.image} alt={image.alt} />
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
         <div className="small"></div>
       </div>
       <div className="text__container">
@@ -24,9 +45,9 @@ export default function Main() {
         </div>
         <div className="bottom">
           <div className="number">
-            <button>-</button>
+            <button className="minus"></button>
             <span>0</span>
-            <button>+</button>
+            <button className="plus"></button>
           </div>
         </div>
       </div>

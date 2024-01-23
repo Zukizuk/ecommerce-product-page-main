@@ -9,8 +9,54 @@ $Light-grayish-blue: hsl(223, 64%, 98%);
 $White: hsl(0, 0%, 100%);
 $Black-with-75-opacity-for-lightbox-background: hsl(0, 0%, 0%);
 
+img {
+  height: 100%;
+}
 
 body {
   min-height: 100svh;
   font-family: 'Kumbh Sans', sans-serif;
+  header {
+    padding: 1.25rem 1.5rem;
+    .header__container {
+      @include flex__JSB;
+      align-items: center;
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        button {
+          all: unset;
+          width: 16px; 
+          height: 15px;
+          background: url(./images/icon-menu.svg) center/cover no-repeat;
+        }
+        nav {
+          position: fixed;
+          left: -100%;
+        }
+      }
+      .right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        svg {
+          :hover {
+            fill: #000;
+          }
+        }
+        img {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
+  }
+  main {
+    .image__wrapper {
+    }
+    .text__container {
+
+    }
+  }
 }
