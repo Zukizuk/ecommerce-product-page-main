@@ -9,9 +9,9 @@ $Light-grayish-blue: hsl(223, 64%, 98%);
 $White: hsl(0, 0%, 100%);
 $Black-with-75-opacity-for-lightbox-background: hsl(0, 0%, 0%);
 
-img {
-  height: 100%;
-}
+// img {
+  // height: 100%;
+// }
 
 body {
   min-height: 100svh;
@@ -20,6 +20,7 @@ body {
     padding: 1.25rem 1.5rem;
     .header__container {
       @include flex__JSB;
+      position: relative;
       align-items: center;
       .left {
         display: flex;
@@ -27,13 +28,42 @@ body {
         gap: 1rem;
         button {
           all: unset;
+          z-index: 3;
           width: 16px; 
           height: 15px;
           background: url(./images/icon-menu.svg) center/cover no-repeat;
+          &.close {
+          background: url(./images/icon-close.svg) center/cover no-repeat;
+          }
         }
         nav {
+          z-index: 2;
           position: fixed;
           left: -100%;
+          top: 0;
+          width: 100%;
+          background: rgba($color: $Black-with-75-opacity-for-lightbox-background, $alpha: .75);
+          height: 100vh;
+          transition: .2s ease-in;
+          &.show {
+            left: 0;
+          }
+          ul {
+            padding-top: 5.875rem;
+            background: $White;
+            width: 70%;
+            height: 100%;
+            padding-left: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            li {
+              a {
+                color: black;
+                font-weight: 700;
+              }
+            }
+          }
         }
       }
       .right {
@@ -49,6 +79,14 @@ body {
           width: 1.5rem;
           height: 1.5rem;
         }
+      }
+      .cart {
+        background: $White;
+        position: absolute;
+        bottom: -3rem;
+        left: -1rem;
+        right: -1rem;
+        z-index: 2;
       }
     }
   }
@@ -123,7 +161,7 @@ body {
             @include place__item__center;
             border-radius: 5px;
             background-color: #ff7d1a26;
-            p {
+            small {
               color: $Orange;
               letter-spacing: .04rem;
               font-size: .8rem;

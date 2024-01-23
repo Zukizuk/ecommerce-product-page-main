@@ -37,7 +37,7 @@ export default function Main() {
           <p>
             $125.00
             <span className="discount">
-              <p>50%</p>
+              <small>50%</small>
             </span>
           </p>
           <span className="initial__price">$250.00</span>
