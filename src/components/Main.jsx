@@ -4,7 +4,7 @@ import { Image, ImageTN } from "./Data";
 import "swiper/scss";
 import SwiperNavigation from "./SwiperNavigation";
 
-export default function Main() {
+export default function Main({ count, Counter }) {
   return (
     <main>
       <div className="gallery">
@@ -44,11 +44,11 @@ export default function Main() {
         </div>
         <div className="bottom">
           <div className="number">
-            <button className="minus"></button>
+            <button className="minus" onClick={() => Counter(-1)}></button>
             <span>
-              <p>0</p>
+              <p>{count}</p>
             </span>
-            <button className="plus"></button>
+            <button className="plus" onClick={() => Counter(1)}></button>
           </div>
           <button type="submit">
             <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
