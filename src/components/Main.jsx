@@ -1,12 +1,10 @@
 import { Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Image, ImageTN } from "./Data";
 import "swiper/scss";
-import "swiper/scss/navigation";
+import SwiperNavigation from "./SwiperNavigation";
 
 export default function Main() {
-  const swiper = useSwiper();
-
   return (
     <main>
       <div className="gallery">
@@ -15,7 +13,6 @@ export default function Main() {
           loop={true}
           spaceBetween={35}
           slidesPerView={1}
-          navigation={false}
         >
           {Image.map((image, index) => {
             return (
@@ -24,10 +21,7 @@ export default function Main() {
               </SwiperSlide>
             );
           })}
-          <div className="custom-navigation">
-            <button onClick={() => swiper?.slidePrev()}></button>
-            <button onClick={() => swiper?.slideNext()}></button>
-          </div>
+          <SwiperNavigation />
         </Swiper>
         <div className="small"></div>
       </div>
