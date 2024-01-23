@@ -1,6 +1,7 @@
 import Logo from "../images/logo.svg";
 import Avatar from "../images/image-avatar.png";
 import { useState } from "react";
+import { Image } from "./Data";
 
 function Header() {
   const [active, setActive] = useState(false);
@@ -44,7 +45,7 @@ function Header() {
         </div>
         <div className="right">
           <svg
-            onClick={() => setCart(!setCart)}
+            onClick={() => setCart(!cart)}
             width="22"
             height="20"
             xmlns="http://www.w3.org/2000/svg"
@@ -57,11 +58,21 @@ function Header() {
           </svg>
           <img src={Avatar} alt="Avatar" />
         </div>
-        <div className="cart">
-          <div className="top">
-            <h3>Cart</h3>
+        <div className={cart ? "cart show" : "cart"}>
+          <h3>Cart</h3>
+          <div className="item">
+            <div className="text__content">
+              <div className="image"></div>
+              <div className="text">
+                <p>Fall Limited Edition Sneakers</p>
+                <p>
+                  $125,00 x 3 <span>$375.00</span>
+                </p>
+              </div>
+              <button className="delete"></button>
+            </div>
+            <button className="checkout">Checkout</button>
           </div>
-          <div className="bottom"></div>
         </div>
       </div>
     </header>
