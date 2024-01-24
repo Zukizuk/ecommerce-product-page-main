@@ -2,7 +2,7 @@ import Logo from "../images/logo.svg";
 import Avatar from "../images/image-avatar.png";
 import { useState } from "react";
 
-function Header({ cartcount, shownum, total }) {
+function Header({ cartcount, shownum, total, deleteTotal }) {
   const [active, setActive] = useState(false);
   const [cart, setCart] = useState(false);
 
@@ -64,19 +64,22 @@ function Header({ cartcount, shownum, total }) {
         </div>
         <div className={cart ? "cart show" : "cart"}>
           <h3>Cart</h3>
-          <div className="item">
-            <div className="text__content">
-              <div className="image"></div>
-              <div className="text">
-                <p>Fall Limited Edition Sneakers</p>
-                <p>
-                  $125,00 x {cartcount} <span>{`$${total.toFixed(2)}`}</span>
-                </p>
+          {cartcount == 0 && <div className="empty">Your car is empty</div>}
+          {cartcount > 0 && (
+            <div className="item">
+              <div className="text__content">
+                <div className="image"></div>
+                <div className="text">
+                  <p>Fall Limited Edition Sneakers</p>
+                  <p>
+                    $125,00 x {cartcount} <span>{`$${total.toFixed(2)}`}</span>
+                  </p>
+                </div>
+                <button className="delete" onClick={deleteTotal}></button>
               </div>
-              <button className="delete"></button>
+              <button className="checkout">Checkout</button>
             </div>
-            <button className="checkout">Checkout</button>
-          </div>
+          )}
         </div>
       </div>
     </header>

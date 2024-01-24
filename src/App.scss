@@ -117,6 +117,14 @@ body {
           margin: 1rem 1.5rem 2rem;
           font-size: 1rem;
         }
+        .empty {
+          flex: 1;
+          border-top: 1px solid $Grayish-blue;
+          display: grid;
+          place-items: center;
+          color: $Dark-grayish-blue;
+          font-weight: 700;
+        }
         .item {
           flex: 1;
           padding: 1.5rem;
