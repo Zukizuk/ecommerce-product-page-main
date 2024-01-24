@@ -87,12 +87,30 @@ body {
               padding-left: unset;
             }
             li {
+              position: relative;
               a {
                 color: black;
                 font-weight: 700;
                 @media (min-width: 64rem) {
                   color: $Dark-grayish-blue;
                   font-weight: 400;
+                  &::before {
+                    position: absolute;
+                    content: '';
+                    background: $Orange;
+                    height: 5px;
+                    width: 100%;
+                    bottom: 0;
+                    top: 3.8rem;
+                    scale: 0;
+                    transition: .4s ease;
+                  }
+                  &:hover {
+                    color: $Very-dark-blue;
+                    &::before {
+                      scale: 1;
+                    }
+                  }
                 }
               }
             }
@@ -238,6 +256,7 @@ body {
     .gallery {
       .swiper {
         position: relative;
+        cursor: pointer;
         @media (min-width: 64rem) {
           border-radius: .8rem;
           width: 445px;
@@ -274,7 +293,7 @@ body {
       display: none; 
       @media (min-width: 64rem) {
         height: 5.75rem;
-        margin-top: 2rem;
+        margin-top: 2.2rem;
         display: grid;
         gap: 2rem;
         padding-inline: 1.2rem;
