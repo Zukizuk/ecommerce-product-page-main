@@ -490,6 +490,33 @@ body {
         height: 65vh;
         width: 50%;
         max-width: 445px;
+        margin-top: -5%;
+        .swiper {
+          position: relative;
+          .custom-navigation {
+            width: 100%;
+            z-index: 1;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            button {
+              all: unset;
+              cursor: pointer;
+              background-color: white;
+              background-image: url(./images/icon-next.svg);
+              background-repeat: no-repeat;
+              background-position: center;
+              width: 2.5rem;
+              height: 2.5rem;
+              border-radius: 50%;
+              &:nth-child(1) {
+                background-image: url(./images/icon-previous.svg);
+              }
+            }
+          }
+        }
       }
     }
   }
