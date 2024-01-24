@@ -9,6 +9,7 @@ function App() {
   const [shownum, setShownum] = useState(false);
   const [cartcount, setCartcount] = useState(false);
   const [total, setTotal] = useState(0);
+  const [showLightbox, setShowLightbox] = useState(false);
 
   function Counter(value) {
     if (count + value < 0) return setCount(0);
@@ -35,8 +36,13 @@ function App() {
         shownum={shownum}
         deleteTotal={deleteTotal}
       />
-      <Lightbox />
-      <Main count={count} addToCart={addToCart} Counter={Counter} />
+      {showLightbox && <Lightbox setShowLightbox={setShowLightbox} />}
+      <Main
+        count={count}
+        addToCart={addToCart}
+        Counter={Counter}
+        setShowLightbox={setShowLightbox}
+      />
     </>
   );
 }

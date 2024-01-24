@@ -1,10 +1,10 @@
 import Gallery from "./Gallery";
 
-export default function Main({ count, Counter, addToCart }) {
+export default function Main({ count, Counter, addToCart, setShowLightbox }) {
   return (
     <main>
       <div className="gallery">
-        <Gallery />
+        <Gallery setShowLightbox={setShowLightbox} />
       </div>
       <div className="text__container">
         <h1>Sneaker Company</h1>

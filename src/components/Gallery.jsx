@@ -7,12 +7,13 @@ import "swiper/scss";
 import "swiper/scss/free-mode";
 import "swiper/scss/thumbs";
 
-function Gallery() {
+function Gallery({ setShowLightbox }) {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (
     <>
       <Swiper
+        onClick={() => setShowLightbox(true)}
         loop={true}
         spaceBetween={35}
         slidesPerView={1}

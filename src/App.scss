@@ -138,6 +138,7 @@ body {
               content: attr(data-cart-items);
               top: -0.5rem;
               left: .5rem;
+              z-index: 1;
               background-color: $Orange;
               width: 20px;
               height: 14px;
@@ -509,12 +510,12 @@ body {
         }
         .swiper {
           border-radius: 1rem;
-          position: relative;
+        }
           .custom-navigation {
-            width: 100%;
-            z-index: 11;
             position: absolute;
-            top: 50%;
+            width: 100%;
+            z-index: 2;
+            top: 45%;
             transform: translateY(-50%);
             display: flex;
             justify-content: space-between;
@@ -528,13 +529,20 @@ body {
               width: 2.5rem;
               height: 2.5rem;
               border-radius: 50%;
+              translate: 1.2rem;
+              &:hover {  
+              background-image: url(./images/icon-next-hover.svg);
+              }
               &:nth-child(1) {
+                translate: -1.2rem;
                 background-image: url(./images/icon-previous.svg);
+                &:hover {  
+                  background-image: url(./images/icon-previous-hover.svg);
+                  }
               }
             }
           }
         }
-      }
       .small {
         display: none; 
         @media (min-width: 64rem) {
