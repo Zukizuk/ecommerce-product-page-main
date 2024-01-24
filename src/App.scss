@@ -297,10 +297,13 @@ body {
         display: block;
         overflow: visible;
         .thumbnails {
-          background: url(./images/image-product-1-thumbnail.jpg) center/cover no-repeat;
           border-radius: .5rem;
           cursor: pointer;
           position: relative;
+          overflow: hidden;
+          img {
+            height: 100%;
+          }
           &::before {
             @include overlay;
           }
@@ -308,15 +311,6 @@ body {
             &::before {
               opacity: 1;
             }
-          }
-          &:nth-child(2) {
-          background: url(./images/image-product-2-thumbnail.jpg) center/cover no-repeat;
-          }
-          &:nth-child(3) {
-          background: url(./images/image-product-3-thumbnail.jpg) center/cover no-repeat;
-          }
-          &:nth-child(4) {
-          background: url(./images/image-product-4-thumbnail.jpg) center/cover no-repeat;
           }
         }
       }
