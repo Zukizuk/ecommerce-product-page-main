@@ -70,12 +70,26 @@ body {
         display: flex;
         align-items: center;
         gap: 1rem;
-        svg {
-          :hover {
-            fill: #000;
+        .cart-box {
+          position: relative;
+          &.show {
+            &::before {
+              position: absolute;
+              content: attr(data-cart-items);
+              top: -0.5rem;
+              left: .5rem;
+              background-color: $Orange;
+              width: 20px;
+              height: 14px;
+              color: white;
+              display: grid;
+              place-items: center;
+              font-size: .6rem;
+              border-radius: 100vw;
+            }
           }
         }
-        img {
+          img {
           width: 1.5rem;
           height: 1.5rem;
         }

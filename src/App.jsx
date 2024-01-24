@@ -5,6 +5,7 @@ import Header from "./components/header";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [shownum, setShownum] = useState(false);
 
   function Counter(value) {
     if (count + value < 0) return setCount(0);
@@ -14,8 +15,8 @@ function App() {
   }
   return (
     <>
-      <Header count={count} />
-      <Main count={count} Counter={Counter} />
+      <Header count={count} shownum={shownum} />
+      <Main count={count} setShownum={setShownum} Counter={Counter} />
     </>
   );
 }
