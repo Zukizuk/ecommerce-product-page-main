@@ -14,18 +14,34 @@ $Black-with-75-opacity-for-lightbox-background: hsl(0, 0%, 0%);
 // }
 
 body {
+  min-height: 100vh;
   min-height: 100svh;
   font-family: 'Kumbh Sans', sans-serif;
+  // #root {
+  //   @media (min-width: 64rem) {
+  //   height: 100vh;
+  //   }
+  // }
   header {
     padding: 1.25rem 1.5rem;
+    @media (min-width: 64rem) {
+      padding: 1.5rem 10.25rem 0;
+    }
     .header__container {
       @include flex__JSB;
       position: relative;
       align-items: center;
+      @media (min-width: 64rem) {
+      padding-bottom: 2rem;
+      border-bottom: 1px solid $Light-grayish-blue;
+    }
       .left {
         display: flex;
         align-items: center;
         gap: 1rem;
+        @media (min-width: 64rem) {
+          gap: 3.375rem;
+        }
         button {
           all: unset;
           z-index: 5;
@@ -34,6 +50,9 @@ body {
           background: url(./images/icon-menu.svg) center/cover no-repeat;
           &.close {
           background: url(./images/icon-close.svg) center/cover no-repeat;
+          }
+          @media (min-width: 64rem) {
+            display: none;
           }
         }
         nav {
@@ -45,6 +64,10 @@ body {
           background: rgba($color: $Black-with-75-opacity-for-lightbox-background, $alpha: .75);
           height: 100vh;
           transition: .2s ease-in;
+          @media (min-width: 64rem) {
+            all: unset;
+            // flex: 1;
+          }
           &.show {
             left: 0;
           }
@@ -57,10 +80,20 @@ body {
             display: flex;
             flex-direction: column;
             gap: 1.5rem;
+            @media (min-width: 64rem) {
+              flex-direction: row;
+              padding-top: unset;
+              width: unset;
+              padding-left: unset;
+            }
             li {
               a {
                 color: black;
                 font-weight: 700;
+                @media (min-width: 64rem) {
+                  color: $Dark-grayish-blue;
+                  font-weight: 400;
+                }
               }
             }
           }
@@ -70,8 +103,12 @@ body {
         display: flex;
         align-items: center;
         gap: 1rem;
+        @media (min-width: 64rem) {
+          gap: 2.75rem;
+        }
         .cart-box {
           position: relative;
+          cursor: pointer;
           &.show {
             &::before {
               position: absolute;
@@ -92,6 +129,10 @@ body {
           img {
           width: 1.5rem;
           height: 1.5rem;
+          @media (min-width: 64rem) {
+            height: 2rem;
+            width: 2rem;
+          }
         }
       }
       .cart {
@@ -176,9 +217,20 @@ body {
     }
   }
   main {
+  @media (min-width: 64rem) {
+    height: 100%;
+    padding: 5.75rem 10.25rem 8rem;
+    display: grid;
+    gap: 5rem;
+    grid-template-columns: 30rem 1fr;
+  }
     .gallery {
       .swiper {
         position: relative;
+        @media (min-width: 64rem) {
+          border-radius: .8rem;
+          width: 445px;
+        }
         .custom-navigation {
           width: 100%;
           z-index: 1;
@@ -188,6 +240,9 @@ body {
           padding-inline: 1rem;
           display: flex;
           justify-content: space-between;
+          @media (min-width: 64rem) {
+            display: none;
+          }
           button {
             all: unset;
             cursor: pointer;
@@ -210,6 +265,12 @@ body {
       padding:  0 1.5rem 5.5rem;
       display: grid;
       gap: 1rem;
+      @media (min-width: 64rem) {
+          gap: 1.5rem;
+          margin-top: unset;
+          padding-bottom: unset;
+          padding-top: 3.75rem;
+        }
       h1 {
         color: $Orange;
         font-size: .85rem;
@@ -223,6 +284,9 @@ body {
         font-size: 1.7rem;
         letter-spacing: .05rem;
         color: $Very-dark-blue;
+        @media (min-width: 64rem) {
+          font-size: 2rem;
+        }
       }
       > p {
         color: $Dark-grayish-blue;
@@ -234,6 +298,10 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media (min-width: 64rem) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
         p {
           display: flex;
           align-items: center;
@@ -261,6 +329,12 @@ body {
         }
       }
       .bottom {
+        @media (min-width: 64rem) {
+          display: grid;
+          place-content: center;
+          gap: 1rem;
+          grid-template-columns: 1fr 1fr;
+        }
         .number {
           background: $Light-grayish-blue;
           text-align: center;
@@ -300,6 +374,9 @@ body {
           align-items: center;
           justify-content: center;
           gap: 1rem;
+          @media (min-width: 64rem) {
+            margin-top: unset;
+          }
           svg {   
           }
         }

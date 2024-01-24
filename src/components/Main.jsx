@@ -1,28 +1,11 @@
-import { Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Image, ImageTN } from "./Data";
 import "swiper/scss";
-import SwiperNavigation from "./SwiperNavigation";
+import Gallery from "./Gallery";
 
 export default function Main({ count, Counter, addToCart }) {
   return (
     <main>
       <div className="gallery">
-        <Swiper
-          modules={[Navigation]}
-          loop={true}
-          spaceBetween={35}
-          slidesPerView={1}
-        >
-          {Image.map((image, index) => {
-            return (
-              <SwiperSlide key={index}>
-                <img src={image.image} alt={image.alt} />
-              </SwiperSlide>
-            );
-          })}
-          <SwiperNavigation />
-        </Swiper>
+        <Gallery />
         <div className="small"></div>
       </div>
       <div className="text__container">

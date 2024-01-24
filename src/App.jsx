@@ -24,7 +24,7 @@ function App() {
     setCartcount(count);
     setShownum(true);
     setTotal(count * 125);
-    setCount(0);
+    // setCount(0);
   }
   return (
     <>
