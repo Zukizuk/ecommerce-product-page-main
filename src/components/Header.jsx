@@ -2,7 +2,7 @@ import Logo from "../images/logo.svg";
 import Avatar from "../images/image-avatar.png";
 import { useState } from "react";
 
-function Header({ count, shownum }) {
+function Header({ cartcount, shownum, total }) {
   const [active, setActive] = useState(false);
   const [cart, setCart] = useState(false);
 
@@ -44,8 +44,8 @@ function Header({ count, shownum }) {
         </div>
         <div className="right">
           <div
-            className={shownum && count > 0 ? "cart-box show" : "cart-box"}
-            data-cart-items={count}
+            className={shownum && cartcount > 0 ? "cart-box show" : "cart-box"}
+            data-cart-items={cartcount}
           >
             <svg
               onClick={() => setCart(!cart)}
@@ -70,7 +70,7 @@ function Header({ count, shownum }) {
               <div className="text">
                 <p>Fall Limited Edition Sneakers</p>
                 <p>
-                  $125,00 x 3 <span>$375.00</span>
+                  $125,00 x {cartcount} <span>{`$${total.toFixed(2)}`}</span>
                 </p>
               </div>
               <button className="delete"></button>
