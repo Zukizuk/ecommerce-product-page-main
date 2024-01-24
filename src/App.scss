@@ -127,6 +127,11 @@ body {
         .cart-box {
           position: relative;
           cursor: pointer;
+          svg {
+            &:hover {
+              filter: brightness(0) saturate(100%) invert(0%) sepia(3%) saturate(0%) hue-rotate(235deg) brightness(99%) contrast(105%);
+            }
+          }
           &.show {
             &::before {
               position: absolute;
@@ -230,6 +235,9 @@ body {
               height: 1rem;
               cursor: pointer;
               background: url(./images/icon-delete.svg) center/cover no-repeat;
+              &:hover {
+              background: url(./images/icon-delete-hover.svg) center/cover no-repeat;
+              }
             }
           }
           .checkout {
@@ -462,6 +470,26 @@ body {
           svg {   
           }
         }
+      }
+    }
+  }
+  .lightbox {
+    display: none; 
+    @media (min-width: 64rem) {
+      z-index: 10;
+      display: grid;
+      place-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba($color: #000000, $alpha: .4);
+      .swiper-container {
+        background-color: white;
+        height: 65vh;
+        width: 50%;
+        max-width: 445px;
       }
     }
   }

@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.scss";
 import Main from "./components/Main";
 import Header from "./components/header";
+import Lightbox from "./components/Lightbox";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -34,6 +35,7 @@ function App() {
         shownum={shownum}
         deleteTotal={deleteTotal}
       />
+      <Lightbox />
       <Main count={count} addToCart={addToCart} Counter={Counter} />
     </>
   );
