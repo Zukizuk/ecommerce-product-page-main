@@ -264,6 +264,9 @@ body {
     .gallery {
       .swiper {
         position: relative;
+        > * {
+          user-select: none;
+        }
         cursor: pointer;
         @media (min-width: 64rem) {
           border-radius: .8rem;
@@ -475,6 +478,9 @@ body {
   }
   .lightbox {
     display: none; 
+    > * {
+      user-select: none;
+    }
     @media (min-width: 64rem) {
       z-index: 10;
       display: grid;
@@ -484,18 +490,29 @@ body {
       left: 0;
       width: 100%;
       height: 100vh;
-      background: rgba($color: #000000, $alpha: .4);
+      background: rgba($color: #000000, $alpha: .6);
       .swiper-container {
-        background-color: white;
         height: 65vh;
         width: 50%;
         max-width: 445px;
         margin-top: -5%;
+        position: relative;
+        .close {
+          position: absolute;
+          top: -2rem;
+          right: .5rem;
+          cursor: pointer;
+          &:hover {
+            svg {
+              filter: brightness(0) saturate(100%) invert(57%) sepia(84%) saturate(1776%) hue-rotate(346deg) brightness(102%) contrast(103%);            }
+          }
+        }
         .swiper {
+          border-radius: 1rem;
           position: relative;
           .custom-navigation {
             width: 100%;
-            z-index: 1;
+            z-index: 11;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -513,6 +530,32 @@ body {
               border-radius: 50%;
               &:nth-child(1) {
                 background-image: url(./images/icon-previous.svg);
+              }
+            }
+          }
+        }
+      }
+      .small {
+        display: none; 
+        @media (min-width: 64rem) {
+          height: 5.75rem;
+          margin-top: 2.2rem;
+          display: block;
+          overflow: visible;
+          .thumbnails {
+            border-radius: .5rem;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            img {
+              height: 100%;
+            }
+            &::before {
+              @include overlay;
+            }
+            &:hover {
+              &::before {
+                opacity: 1;
               }
             }
           }
