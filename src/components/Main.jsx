@@ -25,11 +25,19 @@ export default function Main({ count, Counter, addToCart, setShowLightbox }) {
         </div>
         <div className="bottom">
           <div className="number">
-            <button className="minus" onClick={() => Counter(-1)}></button>
+            <button
+              className="minus"
+              aria-label="counter decrease"
+              onClick={() => Counter(-1)}
+            ></button>
             <span>
               <p>{count}</p>
             </span>
-            <button className="plus" onClick={() => Counter(1)}></button>
+            <button
+              className="plus"
+              aria-label="counter increase"
+              onClick={() => Counter(1)}
+            ></button>
           </div>
           <button type="submit" onClick={addToCart}>
             <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">

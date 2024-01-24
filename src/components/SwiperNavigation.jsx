@@ -5,8 +5,14 @@ function SwiperNavigation() {
 
   return (
     <div className="custom-navigation">
-      <button onClick={() => swiper.slidePrev()}></button>
-      <button onClick={() => swiper.slideNext()}></button>
+      <button
+        aria-label="slide prev"
+        onClick={() => swiper.slidePrev()}
+      ></button>
+      <button
+        aria-label="slider next"
+        onClick={() => swiper.slideNext()}
+      ></button>
     </div>
   );
 }
