@@ -12,7 +12,6 @@ $Black-with-75-opacity-for-lightbox-background: hsl(0, 0%, 0%);
 // img {
   // height: 100%;
 // }
-
 body {
   min-height: 100vh;
   min-height: 100svh;
@@ -301,6 +300,20 @@ body {
           }
         }
     }
+    .mySwiper .swiper-slide-thumb-active {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        right: 0;
+        border-radius: inherit;
+        border: 2px solid $Orange;
+        background: rgba($color: white, $alpha: .7);
+      }
+    }
     .small {
       display: none; 
       @media (min-width: 64rem) {
@@ -405,7 +418,7 @@ body {
           display: grid;
           place-content: center;
           gap: 1rem;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 35% 1fr;
         }
         .number {
           background: $Light-grayish-blue;
@@ -486,7 +499,7 @@ body {
       z-index: 10;
       display: grid;
       place-items: center;
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
@@ -512,8 +525,9 @@ body {
           border-radius: 1rem;
         }
           .custom-navigation {
-            position: absolute;
-            width: 100%;
+            position: fixed;
+            width: 33%;
+            height: 40px;
             z-index: 2;
             top: 45%;
             transform: translateY(-50%);
@@ -543,10 +557,25 @@ body {
             }
           }
         }
+        .mySwiper .swiper-slide-thumb-active {
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            right: 0;
+            border-radius: inherit;
+            border: 2px solid $Orange;
+            background: rgba($color: white, $alpha: .7);
+          }
+        }
       .small {
         display: none; 
         @media (min-width: 64rem) {
-          height: 5.75rem;
+          height: 4.5rem;
+          width: 85%;
           margin-top: 2.2rem;
           display: block;
           overflow: visible;
