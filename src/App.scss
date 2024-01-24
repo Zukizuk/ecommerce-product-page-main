@@ -294,11 +294,9 @@ body {
       @media (min-width: 64rem) {
         height: 5.75rem;
         margin-top: 2.2rem;
-        display: grid;
-        gap: 2rem;
-        padding-inline: 1.2rem;
-        grid-template-columns: repeat(4, 1fr);
-        div {
+        display: block;
+        overflow: visible;
+        .thumbnails {
           background: url(./images/image-product-1-thumbnail.jpg) center/cover no-repeat;
           border-radius: .5rem;
           cursor: pointer;
@@ -473,4 +471,4 @@ body {
       }
     }
   }
-}
+} 
