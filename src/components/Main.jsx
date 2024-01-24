@@ -6,7 +6,12 @@ export default function Main({ count, Counter, addToCart }) {
     <main>
       <div className="gallery">
         <Gallery />
-        <div className="small"></div>
+        <div className="small">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
       <div className="text__container">
         <h1>Sneaker Company</h1>
