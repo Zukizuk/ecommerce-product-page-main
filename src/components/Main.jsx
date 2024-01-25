@@ -30,9 +30,9 @@ export default function Main({ count, Counter, addToCart, setShowLightbox }) {
               aria-label="counter decrease"
               onClick={() => Counter(-1)}
             ></button>
-            <span>
+            <div>
               <p>{count}</p>
-            </span>
+            </div>
             <button
               className="plus"
               aria-label="counter increase"

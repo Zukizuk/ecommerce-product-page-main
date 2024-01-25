@@ -43,7 +43,7 @@ function Gallery({ setShowLightbox }) {
         {ImageTN.map((image, index) => {
           return (
             <SwiperSlide key={index} className="thumbnails">
-              <img src={image.image} alt={image.alt} />
+              <img src={image.image} alt={image.alt} height={176} width={176} />
             </SwiperSlide>
           );
         })}
