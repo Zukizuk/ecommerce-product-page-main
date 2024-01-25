@@ -64,7 +64,7 @@ function Header({ cartcount, shownum, total, deleteTotal }) {
         </div>
         <div className={cart ? "cart show" : "cart"}>
           <h3>Cart</h3>
-          {cartcount == 0 && <div className="empty">Your car is empty</div>}
+          {cartcount == 0 && <div className="empty">Your cart is empty</div>}
           {cartcount > 0 && (
             <div className="item">
               <div className="text__content">
